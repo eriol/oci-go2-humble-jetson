@@ -11,3 +11,6 @@ RUN set -eux; \
     cp /tmp/ros.key /usr/share/keyrings/ros2-archive-keyring.gpg; \
     rm -rf /var/lib/apt/lists/*; \
     apt-get update
+
+RUN test -e /opt/ros/humble/setup.bash || \
+    ln -s /opt/ros/humble/install/setup.bash /opt/ros/humble/setup.bash
